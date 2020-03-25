@@ -334,3 +334,137 @@ All cats are grey in the dark
 ```
 4
 ```
+
+
+
+我的程序：
+
+```c
+#include <stdio.h>
+int main(void){
+    char word[100];
+    int number, i, l;
+    int lMax=0;
+    scanf("%d", &number);
+    
+    for (i=0; i<number; i++){
+        scanf("%s", word);
+        l = 0;
+        while (word[l] != '\0'){
+            l++;
+        }
+        if (l>lMax){
+            lMax = l;
+        }
+    }
+    
+    printf("%d", lMax);
+    return 0;
+}
+```
+
+
+
+# 5 Sorting strings
+
+## 5.1 Sort strings alphabetically
+
+```c
+#include <stdio.h>
+int main(void) {
+    char word1[50];
+    char word2[50];
+    int i = 0;
+    
+    printf("Please enter a word: ");
+    scanf("%s", word1);
+    printf("And another: ");
+    scanf("%s", word2);
+    // Find first letter in which words differ
+    while (word1[i]!='\0' && word2[i]!= '\0' && word1[i] == word2[i]) 
+        i++;
+    if (word1[i] < word2[i])
+        printf("%s comes before %s in the alphabet.\n", word1, word2);
+    else if (word1[i]>word2[i])
+        printf("%s comes after %s in the alphabet.\n", word1, word2);
+    else printf("You entered the same word, %s, twice.\n", word1);
+        
+    return 0;
+}
+```
+
+
+
+## 5.2 Search for a number in an array using linear search
+
+
+
+## 5.3 Activity: is there a 't' in this word?
+
+You are conducting a linguistic study and are  interested in finding words that contain the letter 't' or 'T' in the  first half of the word (including the middle letter if there is one).  Specifically, if the first half of the word does contain a 't' or a 'T', your program should output a 1. If the first half does not contain the  letter 't' or 'T', but the second half does, then your program should  output a 2. Otherwise, if there is no 't' or 'T' in the word at all,  your program's output should be -1. You may assume that the word entered does not have more than 50 letters.
+
+ 
+
+### Examples
+
+#### Input:
+
+```
+apple
+```
+
+#### Output:
+
+```
+-1
+```
+
+ 
+
+#### Input:
+
+```
+raincoat
+```
+
+#### Output:
+
+```
+2
+```
+
+ 
+
+#### Input:
+
+```
+enter
+```
+
+#### Output:
+
+```
+1
+```
+
+ 
+
+#### Input:
+
+```
+Taylor
+```
+
+#### Output:
+
+```
+1
+```
+
+
+
+我的程序：
+
+```c
+
+```
