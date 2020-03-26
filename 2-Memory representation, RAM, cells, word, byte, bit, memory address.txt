@@ -1,22 +1,3 @@
-
-PETRA : How does the computer remember
-where it's stored the value for a certain variable?
-REMI : To answer your question, we first need
-to dig deeper into computer memory.
-One role of the computer's operating system
-is to manage the memory of the computer.
-The term memory refers to the hardware in the computer that
-is involved in storing information for use in the computer.
-We distinguish between two different types of memory.
-RAM, short for Random Access Memory, is temporary memory
-that is easy and quick to access and, for example, used to execute programs.
-We also call this type of storage volatile memory.
-On the other hand, there is nonvolatile, or lasting memory
-for more permanent storage of data,
-for example, used to store files on the hard drive.
-In the technical specification of a computer's hardware,
-you can see the distinction between the amount of storage
-available via the RAM and the available hard drive space.
 PETRA : The vast majority of computer programs
 uses the computer's RAM during execution.
 Values of variables, for example, are stored in --

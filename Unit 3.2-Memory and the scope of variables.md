@@ -45,5 +45,20 @@ The architecture we just described provides a good if somewhat simplified overvi
 
 ## 1.2 Memory representation, RAM, cells, word, byte, bit, memory address
 
+## 1.2.1 two different types of memory
+
+1. RAM (short for Random Access Memory)
+
+It is temporary memorythat is easy and quick to access and, for example, used to execute programs.
+
+We also call this type of storage volatile memory.
+
+![image-20200326140325032](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200326140325032.png)
 
 
+
+2. nonvolatile, or lasting memory
+
+It is for more permanent storage of data, for example, used to store files on the hard drive.
+
+![image-20200326140335656](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200326140335656.png)
