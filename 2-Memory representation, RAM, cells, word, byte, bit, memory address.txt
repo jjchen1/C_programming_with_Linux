@@ -1,0 +1,78 @@
+
+PETRA : How does the computer remember
+where it's stored the value for a certain variable?
+REMI : To answer your question, we first need
+to dig deeper into computer memory.
+One role of the computer's operating system
+is to manage the memory of the computer.
+The term memory refers to the hardware in the computer that
+is involved in storing information for use in the computer.
+We distinguish between two different types of memory.
+RAM, short for Random Access Memory, is temporary memory
+that is easy and quick to access and, for example, used to execute programs.
+We also call this type of storage volatile memory.
+On the other hand, there is nonvolatile, or lasting memory
+for more permanent storage of data,
+for example, used to store files on the hard drive.
+In the technical specification of a computer's hardware,
+you can see the distinction between the amount of storage
+available via the RAM and the available hard drive space.
+PETRA : The vast majority of computer programs
+uses the computer's RAM during execution.
+Values of variables, for example, are stored in --
+meaningful written to and read from --
+Random Access Memory.
+For simplicity, we may represent the Random Access Memory
+as a sequence of binary memory cells, each populated with a 0 or a 1.
+We call each such cell 1 bit.
+By grouping several of these cells or bits together,
+we create what is called a word.
+A word is the fundamental unit of data that
+can be moved between the RAM and the computer processor.
+The size of a word is thus expressed in number of bits --
+that is, number of memory cells --
+or in bytes.
+Recall that 1 byte equals 8 bits.
+REMI : Modern personal computers and modern processors more
+ordinarily tend to use 8, 16, 32, or even 64 bits
+to form one word, though other word sizes are possible.
+These particular word sizes emerge historically
+as a result of the hardware architecture,
+but they have evolved over time.
+Petra, why would one want to group memory cells into words?
+PETRA : Well, this allows for the addressing of memory.
+In fact, an address is assigned to each word.
+We also call this a memory address.
+The computer address is a whole number that
+describes the location of the word in the computer memory.
+For example, imagine the computer whose word length is 8 bits.
+Suppose, in addition, that this computer can store a total of four words.
+It's not a very big computer.
+One could then address the computer's memory
+by assigning an address to each of the four words,
+just like you would assign an address to each of four houses on a street.
+Each word gets a number as its address.
+REMI : Look here.
+The address 0 would be used for the first word : that is,
+the first 8 memory cells.
+The address 1 would be used for the second word :
+the next 8 memory cells.
+The address 2 would be used for the third word,
+and the address 3 would be used for the fourth word.
+In the C programming language, it is possible to get these memory addresses
+during the execution of a program.
+PETRA : For example, if I use a variable in my program
+that stores an integer value, then not only could I find and use
+this value during my program, but equally well,
+I could obtain the memory location - that is,
+the address where the value is stored.
+REMI : The use of memory addresses allows low-level access to the computer
+by allowing direct access to the computer's memory.
+One could literally move through the computer's memory from word to word.
+PETRA : This technique allows for optimization of memory usage
+at a very precise level, or of performance
+in terms of execution speed.
+This is an extremely powerful tool for application developers.
+REMI : So now you know that each variable has its own address,
+and that memory is composed of bits --
+cells -- that are organized into words.

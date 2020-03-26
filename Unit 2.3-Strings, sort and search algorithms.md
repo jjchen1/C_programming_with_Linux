@@ -397,13 +397,41 @@ int main(void) {
 
 ## 5.2 Search for a number in an array using linear search
 
+```c
+#include <stdio.h>
+int main(void) {
+    //! showArray(list, cursors=[i])
+    int list[] = {6, -2, 5, 12, 7, 3, 8, 18, -10, 1};
+    int n = 10;
+    int item, i, found;
+    
+    printf("Which number are you looking for? ");
+    scanf("%d", &item);
+    found = 0;
+    i = 0;
+    while (!found && i<n) {
+        if (item == list[i]) { 
+            found = 1;
+        } else {
+            i++;
+        }
+    }
+    
+    if (!found) {
+        printf("%d is not a member of this list. \n", item);
+    } else {
+        printf("I found %d at index %d in the list. \n", item, i);
+    }
+    
+	return 0;
+}
+```
+
 
 
 ## 5.3 Activity: is there a 't' in this word?
 
 You are conducting a linguistic study and are  interested in finding words that contain the letter 't' or 'T' in the  first half of the word (including the middle letter if there is one).  Specifically, if the first half of the word does contain a 't' or a 'T', your program should output a 1. If the first half does not contain the  letter 't' or 'T', but the second half does, then your program should  output a 2. Otherwise, if there is no 't' or 'T' in the word at all,  your program's output should be -1. You may assume that the word entered does not have more than 50 letters.
-
- 
 
 ### Examples
 
@@ -466,5 +494,223 @@ Taylor
 我的程序：
 
 ```c
+#include <stdio.h>
+int main(void){
+    char word[50];
+    int found=0;
+    int i=0;
+    int l=0;
+    scanf("%s", word);
+    
+    while (word[l] != '\0'){
+        l++;
+    }
+    
+    while (!found && i<l){
+        if (word[i] == 't' || word[i] == 'T'){
+            found = 1;
+        }
+        i++;
+    }
+    
+    if (found == 1 && i <= l/2){
+        printf("1");
+    } else if (found == 1 && i > l/2){
+        printf("2");
+    } else {
+        printf("-1");
+    }  
+    
+    return 0;
+}
+```
 
+
+
+# 6 Searching with bisection and sorting with bubble sort
+
+## 6.1 Search for a number in a sorted list using bisection
+
+```c
+#include<stdio.h>
+int main(void) {
+    //! showArray(list, cursors=[ia, ib, mid])
+    int list[] = {-10, -3, 2, 5, 8, 14, 77, 106, 759, 900}; /* sorted list */
+    int n = 10;
+    int item; 
+    int ia, ib, mid, found;
+    
+    printf("Which number are you looking for? ");
+    scanf("%d", &item);
+    ia = 0;
+    ib = n-1;
+    found = 0;
+    
+    while (!found && (ia <= ib)) {
+        mid = (ia + ib)/2; // middle index
+        if (item == list[mid]) {
+            found = 1;  // found item!
+        } else if (item<list[mid]) {
+            ib = mid-1; // toss the top half
+        } else {
+            ia = mid + 1; // toss the bottom half
+        }
+    }
+    
+    if (!found) {
+        printf("Number %d was not found in the array. \n", item);
+    } else {
+        printf("Number %d was found at index %d in the array.\n", item, mid);
+    }
+    
+	return 0;
+}
+```
+
+
+
+## 6.2 Sort an array using bubble sort
+
+```c
+#include<stdio.h>
+int main(void) {
+    //! showArray(list, cursors=[i])
+    // Sorting from smallest to largest
+    int list[] = {759, 14, 2, 900, 106, 77, -10, 8, -3, 5}; /* unsorted list */
+    int n = 10;
+    int i, j;
+    int swap;
+    
+    printf("Unsorted list: \n");
+    for (i=0; i<n; i++) {
+        printf("%d ", list[i]);
+    }
+    
+    for (j=0; j<n-1; j++) {
+        for (i=0; i<n-1; i++) {
+            if (list[i] > list[i+1]) {
+                swap = list[i];
+                list[i] = list[i+1];
+                list[i+1] = swap;
+            }
+        }
+    }
+    
+    printf("\nSorted list: \n");
+    for (i=0; i<n; i++) {
+        printf("%d ", list[i]);
+    }
+
+    return 0;
+}
+```
+
+
+
+## 6.3 Activity: find repeat letters in a word
+
+You are still conducting linguistic research! This  time, you'd like to write a program to find out how many letters occur  multiple times in a given word. Your program should read a word from the input and then sort the letters of the word alphabetically (by their  ASCII codes). Next, your program should iterate through the letters of  the word and compare each letter with the one following it. If these  equal each other, you increase a counter by 1, making sure to then skip  ahead far enough so that letters that occur more than twice are not  counted again. You may assume that the word you read from the input has  no more than 50 letters, and that the word is all lowercase.
+
+### Examples
+
+#### Input:
+
+```
+apple
+```
+
+#### Output:
+
+```
+1
+```
+
+ 
+
+#### Input:
+
+```
+keeper
+```
+
+#### Output:
+
+```
+1
+```
+
+ 
+
+#### Input:
+
+```
+erroneousnesses
+```
+
+#### Output:
+
+```
+5
+```
+
+ 
+
+#### Input:
+
+```
+taylor
+```
+
+#### Output:
+
+```
+0
+```
+
+
+
+我的程序：
+
+```c
+#include <stdio.h>
+int main(void){
+    char list[50];
+    int i, j, swap;
+    int number=0;
+    int isForward;
+    int n=0;
+    scanf("%s", list);
+    
+    while (list[n] != '\0'){
+        n++;
+    }
+    
+    for (j=0; j<n-1; j++) {
+        for (i=0; i<n-1; i++) {
+            if (list[i] > list[i+1]) {
+                swap = list[i];
+                list[i] = list[i+1];
+                list[i+1] = swap;
+            }
+        }
+    }
+    
+    for (i=0; i<n-1; i++){
+        isForward = 1;
+        
+        if (list[i] == list[i+1]){
+            number++;
+        }
+        
+        while (list[i] == list[i+1+isForward] && list[i+1+isForward] != '\0'){
+            isForward++;
+        }    
+        
+        i += isForward-1;
+        
+    }
+    
+    printf("%d", number);
+    return 0;
+}
 ```
