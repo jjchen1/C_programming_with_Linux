@@ -603,7 +603,32 @@ int main(){
 
 ## 3.3 Scope and functions in C: scope of variables when using functions
 
+main和其他block（这里是函数）的变量不通用，需要传递参数进去。parameters和arguments，变量名可以不同，但类型要相同。
 
+```c
+#include <stdio.h>
+void doSomething(int);
+int main(){
+    //! showMemory(start=65520)
+    int a = 10;
+    int b = 11;
+    int f = 14;
+    int g = 15;
+    doSomething(b);
+    printf("f: %d\n",f);
+    return(0);
+}
 
-## 3.4 Activity: scope of variables
+void doSomething(int h)
+{
+        int a = 20;
+
+        int c = 12;
+        int d = 13;
+        int e = a + c;
+        c = h + d;
+        printf("c: %d\n",c);
+        printf("e: %d\n",e);
+}
+```
 
