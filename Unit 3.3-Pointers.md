@@ -463,7 +463,9 @@ void elixir(int * ageAddr){
 
 ## 4.1 Introduction to pointer arithmetic: arrays, addresses and pointers
 
-1. 注意，写入array时，以前就不加&，此处也是直接arr；通过pointer，改变了arr[0]的值
+1. 注意，写入array时，以前就不加&，此处也是直接arr；通过pointer，改变了arr[0]的值。
+
+array的名字，是其第1个元素
 
 ```c
 #include <stdio.h>
@@ -581,7 +583,7 @@ int main(void){
 
 
 
-输出：
+3. 输出：
 
 ```
 array = ffdc                                                                    
@@ -592,17 +594,182 @@ ptr1[5] = 0, &ptr1[5] = fff8
 (ptr2-3) = ffec, *(ptr2-3) = -7
 ```
 
+所以，答案是：-5、-7
 
 
-分析过程：
 
-![image-20200327151207769](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200327151207769.png)
+分析过程（弄懂后，就没必要把图作出来了）：
+
+![image-20200328013650910](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200328013650910.png)
+
+array的address是：ffdc；数组前不用加&，就代表address了。
+
+ptr1=array+2，就是：ffe4
+
+ptr1+1，就是：ffe8；所以 *(ptr1+1)就是：**-5**。
+
+
+
+ptr1对应的也不是只有ffe4，而是从ffe4到ffff的数组。
+
+“ptr1[5] ”的ptr1，是代表数组ptr1；ptr1[5]，代表着第6位，即数字0；对应的pointer： &ptr1[5] = fff8。
+
+因为ptr2 = &ptr1[5]，所以(ptr2-3)后退到了ffec；*(ptr2-3)代表着，求(ptr2-3)对应的数字，即，**-7**。
+
+
 
 # 5 Passing arrays to functions
 
 ## 5.1 Pass an array to a function
 
+### 5.1.1 调用自定义函数reset()
+
+```c
+#include <stdio.h>
+void reset(int *);
+int main() {
+    //! showMemory(start=65520)
+    int arr[3] = {15, 16, 17};
+    reset(arr);
+    return 0;
+}
+void reset(int * ptr){
+    * ptr = 0; //为了格式统一，还可以写作：* (ptr + 0) = 0;
+    * (ptr + 1) = 0;
+    * (ptr + 2) = 0;
+}
+```
+
+
+
+1. 定义初始arr：
+
+![image-20200328015047845](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200328015047845.png)
+
+2. 调用reset()函数：
+
+![image-20200328014759145](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200328014759145.png)
+
+3. 通过pointer，将arr的值赋为0：
+
+![image-20200328014859441](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200328014859441.png)
+
+
+
+### 5.1.2 将* ptr改为ptr[0]，结果是等价的：
+
+```c
+#include <stdio.h>
+void reset(int *);
+int main() {
+    //! showMemory(start=65520)
+    int arr[3] = {15, 16, 17};
+    reset(arr);
+    return 0;
+}
+void reset(int * ptr){
+    ptr[0] = 0;
+    ptr[1] = 0;
+    ptr[2] = 0;
+}
+```
+
+
+
+### 5.1.3 此时，看着parameter和argument的*，很是碍眼，可以去掉。下列程序，也是等价的：
+
+```c
+#include <stdio.h>
+void reset(int []);
+int main() {
+    //! showMemory(start=65520)
+    int arr[3] = {15, 16, 17};
+    reset(arr);
+    return 0;
+}
+void reset(int ptr[]){
+    ptr[0] = 0;
+    ptr[1] = 0;
+    ptr[2] = 0;
+}
+```
+
 
 
 ## 5.2 Activity: arrays and functions
 
+Within this program, we will pass an array with 6  integers to a function, have the function swap the first and last  integer, the second and the second to last integer, the third and the  third to last integer.
+
+The function is called reverseArray and doesn't  return anything (void). It should take one parameter, representing the  array of integers. 
+
+The main function first reads 6 integers from the  input, and assigns them to the array. The main function then calls  reverseArray, passing the array as an argument.
+
+The main function then prints the reversed array.
+
+### Examples
+
+#### Input:
+
+```
+1 2 3 4 5 6
+```
+
+#### Output:
+
+```
+6 5 4 3 2 1
+```
+
+ 
+
+#### Input: 
+
+```
+9 12 3 25 11 5
+```
+
+#### Output:
+
+```
+5 11 25 3 12 9
+```
+
+
+
+我的程序：
+
+```c
+#include <stdio.h>
+void reverseArray(int *);
+
+int main(void){
+	int i, arr[6]; 
+    for (i=0; i<6; i++){
+        scanf("%d", &arr[i]);
+    }	
+    
+	reverseArray(arr);
+	
+    for (i=0; i<6; i++){
+        printf("%d ", arr[i]);
+    }
+    
+	return 0;
+}
+
+void reverseArray(int * ptr){
+    int swap;
+    
+    swap = * (ptr + 0);
+    * (ptr + 0)  = * (ptr + 5);
+    * (ptr + 5) = swap;
+    
+    swap = * (ptr + 1);
+    * (ptr + 1)  = * (ptr + 4);
+    * (ptr + 4) = swap;
+    
+    swap = * (ptr + 2);
+    * (ptr + 2)  = * (ptr + 3);
+    * (ptr + 3) = swap;
+}
+```

@@ -38,8 +38,15 @@ Unit 3.3: Pointers
 
 ***
 
-
 ### 4-C Programming: Pointers and Memory Management
+课程地址：https://courses.edx.org/courses/course-v1:Dartmouth_IMTx+DART.IMT.C.04+1T2020/course/
+
+
+Unit 4.1: Memory and pointers
+
+Unit 4.2: Multidimensional arrays 
+
+Unit 4.3: Dynamic memory allocation 
 
 ***
 
