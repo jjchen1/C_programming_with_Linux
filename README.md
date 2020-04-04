@@ -50,8 +50,15 @@ Unit 4.3: Dynamic memory allocation
 
 ***
 
-
 ### 5-C Programming: Advanced Data Types
+
+课程地址：https://courses.edx.org/courses/course-v1:Dartmouth_IMTx+DART.IMT.C.05+1T2020/course/
+
+Unit 5.1: Structures
+
+Unit 5.2: Structures and pointers 
+
+Unit 5.3: Linked lists 
 
 ***
 
