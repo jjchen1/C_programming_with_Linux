@@ -490,4 +490,4 @@ char * allocateString(int numChars){
 ```    scanf("%s", strLight);```
 ``` scanf("%s", strDark);```
 
-中
+中的strLight和strDark，不需要&。
