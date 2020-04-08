@@ -62,10 +62,24 @@ Unit 5.3: Linked lists
 
 ***
 
-
 ### 6-Linux Basics: The Command Line Interface
+
+课程地址：https://courses.edx.org/courses/course-v1:Dartmouth_IMTx+DART.IMT.C.06+1T2020/course/
+
+Unit 6.1: History of Linux and the command line 
+
+Unit 6.2: The Linux file system 
+
+Unit 6.3: C program compilation with gcc 
 
 ***
 
-
 ### 7-C Programming: Using Linux Tools and Libraries
+
+课程地址：https://courses.edx.org/courses/course-v1:Dartmouth_IMTx+DART.IMT.C.07+1T2020/course/
+
+Unit 7.1: Libraries in C 
+
+Unit 7.2: Modularization Libraries and Makefiles 
+
+Unit 7.3: File operations in C 
