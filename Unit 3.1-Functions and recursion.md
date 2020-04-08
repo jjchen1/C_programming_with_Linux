@@ -349,7 +349,7 @@ int main(void) {
 #include <stdio.h>
 // 5! = 1*2*3*4*5
 // n! = 1*2*3*...*(n-1)*n
-//recursion : one function calls itself
+// recursion : one function calls itself
 int factorial(int);
 int main(void) {
     int n, facto;
