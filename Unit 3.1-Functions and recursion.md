@@ -1,3 +1,5 @@
+[TOC]
+
 # 2 Defining functions and passing values to functions
 
 ## 2.1 Write a function: the sum of 2 integers
@@ -185,11 +187,11 @@ if(letter == 'a') {...}
 
  
 
-### Example
+**Examples**
 
 The following entry indicates that there are four  values to be converted. The first is 10 meters, which, when converted,  gives approximately 32.808 feet. The second is 1245.243 grams, or about  2.745761 pounds, the third is 37.2 degrees Celsius, or 98.96 degrees  Farenheit, and the fourth is 23 grams, or 0.050715 pounds.
 
-#### Input
+**Input:**
 
 ```
 4
@@ -201,7 +203,7 @@ The following entry indicates that there are four  values to be converted. The f
 
  
 
-#### Output
+**Output: **
 
 ```
 32.808000 ft
@@ -212,7 +214,7 @@ The following entry indicates that there are four  values to be converted. The f
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -263,16 +265,16 @@ To help you with this task, please write a function  called min() that finds and
 
 Next, please use min() in your main function to work your way through an entire list of numbers in order to find its  minimum. The first number you read gives the number of elements in the  list of integers under consideration. You will then read the integer  values, using min() to keep only the smallest integer read at each step. In the end, please print out the smallest integer in the list.
 
-### Example
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 10
 4 3 6 2 6 8 9 8 5 4
 ```
 
-#### Output
+**Output: **
 
 ```
 2
@@ -280,7 +282,7 @@ Next, please use min() in your main function to work your way through an entire 
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -423,15 +425,15 @@ sumOfDigits(645) = 5 + sumOfDigits(64)
 
 sumOfDigits(6) = 6
 
-### Examples
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 47253
 ```
 
-#### Output
+**Output: **
 
 ```
 21
@@ -439,13 +441,13 @@ sumOfDigits(6) = 6
 
  
 
-#### Input
+**Input:**
 
 ```
 643
 ```
 
-#### Output
+**Output: **
 
 ```
 13
@@ -453,7 +455,7 @@ sumOfDigits(6) = 6
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

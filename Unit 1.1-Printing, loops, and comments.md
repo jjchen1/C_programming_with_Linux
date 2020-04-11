@@ -1,3 +1,5 @@
+[TOC]
+
 # 4 Printing text and new lines
 
 ##  4.1 Print text and new lines 
@@ -11,6 +13,8 @@ int main(void){
 }
 ```
 
+
+
 ## 4.2 Activity: print text over several lines
 
 输出下列内容：
@@ -22,7 +26,10 @@ I already know how to:
 - Fix errors.
 ```
 
-代码为：
+
+
+**我的程序：**
+
 ```c
 #include <stdio.h>
 int main(void){
@@ -48,6 +55,8 @@ int main(void){
 }
 ```
 
+
+
 ## 5.2 Activity: Print multiple lines
 
 用1个printf命令，输出下列内容：
@@ -60,7 +69,9 @@ int main(void){
 .....
 ```
 
-代码为：
+
+
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -96,7 +107,9 @@ Dennis Ritchie said:
 "The only way to learn a new programming language is by writing programs in it."
 ```
 
-代码：
+
+
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -123,6 +136,8 @@ int main(void) {
 }
 ```
 
+
+
 ## 7.2 Activity: use a for-loop to print a line multiple times
 
 用一行printf输出：
@@ -133,7 +148,9 @@ C is fun!
 C is fun!
 ```
 
-代码：
+
+
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -146,9 +163,29 @@ int main(void) {
 }
 ```
 
+
+
 # 8 Repeat a block of instructions with a for loop
 
 ## 8.1 Repeat a block of instructions with a for loop
+
+```c
+#include <stdio.h>
+int main(void) {
+    int i=0;
+    for(i = 0; i < 3; i++) {
+        printf("Blah");
+        printf("Bleh");
+        printf("Blih ");
+    }
+    printf("\n");
+    for (i=0; i<6; i++) {
+        printf("Bloh");
+        printf("Bluh ");
+    }
+    return 0;
+}
+```
 
 
 
@@ -172,7 +209,7 @@ Simple, right? So now let's make this more  difficult! You are only allowed to u
 
 
 
-代码：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -212,6 +249,8 @@ int main(void) {
 ```
 Hello Hello Hello world!  
 ```
+
+
 
 ## 9.2 Activity: correct simple errors in loops with missing braces
 
@@ -259,7 +298,9 @@ The desired output is:
 
 
 
-代码（只是加了对{}）：
+**我的程序：**
+
+（只是加了对{}）：
 
 ```c
 #include <stdio.h>
@@ -298,6 +339,8 @@ int main(void) {
 // it adds comments
 ```
 
+
+
 ## 10.2 Comment on one dedicated line
 
 ```c
@@ -307,6 +350,8 @@ int main(void){//comment 2
     return 0;//comment 4
 }//comment 5
 ```
+
+
 
 ## 10.3 Comments over multiple lines
 
@@ -329,6 +374,8 @@ int main(void) {
 }
 ```
 
+
+
 ## 10.4 Comments inside comments
 
 ```c
@@ -348,6 +395,8 @@ int main(void) {
     return 0;
 }
 ```
+
+
 
 ## 10.5 Activity: add comments to existing code
 
@@ -393,7 +442,7 @@ int main(void) {
 
 
 
-答案：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -483,7 +532,7 @@ int main(void){
 
 
 
-答案：
+**我的程序：**
 
 ```c
 //preprocessor directive

@@ -1,4 +1,6 @@
-# Printing and computing with integers
+[TOC]
+
+# 2 Printing and computing with integers
 
 ## 2.1 Use format specifier %d to print integer value
 
@@ -28,7 +30,7 @@ int main() {
 
 
 
-# 2.3 Activity: perform simple arithmetic in C
+## 2.3 Activity: perform simple arithmetic in C
 
 You work for the IBP (International Bureau of  Procrastination). You've been asked how much time is left until the  official day of procrastination (March 25th).
 
@@ -45,7 +47,7 @@ Here, X is the remaining number of days (25-23), Y  is the number of minutes (60
 
 
 
-答案：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -132,8 +134,6 @@ int main() {
 
 
 
-
-
 ## 4.2 Name your variables: do's and don'ts
 
 ```c
@@ -205,6 +205,8 @@ int main(void) {
 }
 ```
 
+
+
 ## 5.2 Activity: print the x8 multiplication table
 
 Your friend is having a lot of difficulties with  multiplication tables. He's having the most trouble with the multiples  of 8 table, and asks you to send him the multiples of 8 table so that he can learn it more easily. To do this, you decide to write a program  that prints the multiples of 8 table. Because you will use your code  again in the future to print other multiplcation tables, you decide to  use a loop and **only one print statement**.
@@ -222,7 +224,7 @@ Your program must use the following format to print the multiples of 8 table (be
 
 
 
-答案：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -294,15 +296,15 @@ int main(void) {
 
 n this activity, you want to improve your existing  multiplication program (that prints the 8 times table). Your program  should read an integer from the user (not you) and print the  multiplication table for the number that they enter.
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 8
 ```
 
-#### Output:
+**Output:**
 
 ```
 0x8 = 0
@@ -311,13 +313,13 @@ n this activity, you want to improve your existing  multiplication program (that
 10x8 = 80
 ```
 
-#### Input:
+**Input:**
 
 ```
 5
 ```
 
-#### Output:
+**Output:**
 
 ```
 0x5 = 0
@@ -328,7 +330,7 @@ n this activity, you want to improve your existing  multiplication program (that
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -368,10 +370,6 @@ int main() {
 
 
 
-
-
-
-
 ## 7.2 Activity: read and process multiple integers via a loop
 
 Here is your final activity of this unit. Use it to  apply everything you have learned! David is fighting Goliath (again...)  and it turns out that Goliath is much bigger than David thought.  Fortunately David is not short of resources and he plans to send robots  to fight the giant. But before launching the assault, David must  evaluate the performance of these robots to ensure success. This is  where you come in. You are given some data on David's robots and need to compute and output a corresponding power score.
@@ -382,9 +380,9 @@ Here is how: You should write a program that takes  several lines of input from 
 (enginePower + resistance) * (weight - height)
 ```
 
-### Example
+**Example**
 
-#### Input:
+**Input:**
 
 ```
 2
@@ -392,7 +390,10 @@ Here is how: You should write a program that takes  several lines of input from 
 43 62 5 2
 ```
 
-#### Output:
+
+
+**Output:**
+
 
 ```
 163
@@ -408,7 +409,7 @@ You must use a loop to read each of the lines!
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

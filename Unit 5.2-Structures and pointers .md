@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Create a structure to store the coordinates of a point
 
 ## 1.1  Create structures from user input
@@ -166,7 +168,7 @@ void printPoint(struct point pt){
 
 
 
-# 2.2 Activity: allocate memory for structures
+## 2.2 Activity: allocate memory for structures
 
 In this task, we will continue to work with polygons. You are provided with the following: 
 \- A familiar structure definition for a 2-dimensional point.
@@ -182,15 +184,15 @@ Your main function should read the number of  vertices to store in the array of 
 
  
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 4
 ```
 
-#### Output:
+**Output: **
 
 ```
 (0, 0)
@@ -201,7 +203,7 @@ Your main function should read the number of  vertices to store in the array of 
 
  
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -238,7 +240,7 @@ void printPoly(struct point *ptr, int N) {
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -484,4 +486,3 @@ void freePoints(struct point * start) {
     }
 }
 ```
-

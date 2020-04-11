@@ -1,3 +1,4 @@
+[TOC]
 # 1 Using strings (arrays of characters)
 
 ## 1.1 Store, print and read strings as arrays of characters
@@ -27,15 +28,15 @@ int main(void) {
 
 Write a C-program that prints out a word as many  times as specified. The number of repetitions and the word should be  given as input to the program. You may assume that the word has no more  than 100 characters (be sure to also reserve space for the null  terminator, \0, though!).
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 2 Hello
 ```
 
-#### Output:
+**Output: **
 
 ```
 Hello
@@ -44,13 +45,13 @@ Hello
 
  
 
-#### Input:
+**Input:**
 
 ```
 4 thing
 ```
 
-#### Output:
+**Output: **
 
 ```
 thing
@@ -61,13 +62,13 @@ thing
 
 
 
-Hint 1 :
+**Hint 1 :**
 
 Use a for loop to repeat printing the scanned word as many times as necessary.
 
 
 
-我的程序：
+**我的程序：**
 
 这样只能得85分，提示：“It looks like you did not declare an array of the correct size.
 Make sure to add room for the null terminator, and don't use more space than you need to! (-15 points)”
@@ -135,9 +136,9 @@ Your program should first read the total number of  names (an integer) in order 
 
 Note that, for ease of viewing, the example below  shows all of the inputs in one block and all of the outputs in another  block, despite the fact that programmatically these will be  interspersed. 
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 4
@@ -149,7 +150,7 @@ Claude Shannon
 
  
 
-#### Output:
+**Output: **
 
 ```
 Turing Alan
@@ -160,7 +161,7 @@ Shannon Claude
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -207,15 +208,15 @@ At the annual meeting of MOOC fans, participants  register on the first day of t
 
 To simplify the program, you may assume that student names are less than 50 characters long and contain no spaces. Your  program should output an integer value (1 or 2) depending on whether the fan should join line 1 (name has even number of letters) or line 2  (name has odd number of letters).
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 Sharrock
 ```
 
-#### Output:
+**Output: **
 
 ```
 1
@@ -223,13 +224,13 @@ Sharrock
 
  
 
-#### Input:
+**Input:**
 
 ```
 Bonfert
 ```
 
-#### Output:
+**Output: **
 
 ```
 2
@@ -237,7 +238,7 @@ Bonfert
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -306,9 +307,9 @@ Your job is to find the length of the longest word  in a text with no punctuatio
 
 To simplify your program, you can assume that the longest word will not exceed 100 characters.
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 14
@@ -316,20 +317,20 @@ This is a simple example text
 we have to find the largest word length
 ```
 
-#### Output:
+**Output: **
 
 ```
 7
 ```
 
-#### Input:
+**Input:**
 
 ```
 7
 All cats are grey in the dark
 ```
 
-#### Output:
+**Output: **
 
 ```
 4
@@ -337,7 +338,7 @@ All cats are grey in the dark
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -433,15 +434,15 @@ int main(void) {
 
 You are conducting a linguistic study and are  interested in finding words that contain the letter 't' or 'T' in the  first half of the word (including the middle letter if there is one).  Specifically, if the first half of the word does contain a 't' or a 'T', your program should output a 1. If the first half does not contain the  letter 't' or 'T', but the second half does, then your program should  output a 2. Otherwise, if there is no 't' or 'T' in the word at all,  your program's output should be -1. You may assume that the word entered does not have more than 50 letters.
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 apple
 ```
 
-#### Output:
+**Output: **
 
 ```
 -1
@@ -449,13 +450,13 @@ apple
 
  
 
-#### Input:
+**Input:**
 
 ```
 raincoat
 ```
 
-#### Output:
+**Output: **
 
 ```
 2
@@ -463,13 +464,13 @@ raincoat
 
  
 
-#### Input:
+**Input:**
 
 ```
 enter
 ```
 
-#### Output:
+**Output: **
 
 ```
 1
@@ -477,13 +478,13 @@ enter
 
  
 
-#### Input:
+**Input:**
 
 ```
 Taylor
 ```
 
-#### Output:
+**Output: **
 
 ```
 1
@@ -491,7 +492,7 @@ Taylor
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -611,15 +612,15 @@ int main(void) {
 
 You are still conducting linguistic research! This  time, you'd like to write a program to find out how many letters occur  multiple times in a given word. Your program should read a word from the input and then sort the letters of the word alphabetically (by their  ASCII codes). Next, your program should iterate through the letters of  the word and compare each letter with the one following it. If these  equal each other, you increase a counter by 1, making sure to then skip  ahead far enough so that letters that occur more than twice are not  counted again. You may assume that the word you read from the input has  no more than 50 letters, and that the word is all lowercase.
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 apple
 ```
 
-#### Output:
+**Output: **
 
 ```
 1
@@ -627,13 +628,13 @@ apple
 
  
 
-#### Input:
+**Input:**
 
 ```
 keeper
 ```
 
-#### Output:
+**Output: **
 
 ```
 1
@@ -641,13 +642,13 @@ keeper
 
  
 
-#### Input:
+**Input:**
 
 ```
 erroneousnesses
 ```
 
-#### Output:
+**Output: **
 
 ```
 5
@@ -655,13 +656,13 @@ erroneousnesses
 
  
 
-#### Input:
+**Input:**
 
 ```
 taylor
 ```
 
-#### Output:
+**Output: **
 
 ```
 0
@@ -669,7 +670,7 @@ taylor
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

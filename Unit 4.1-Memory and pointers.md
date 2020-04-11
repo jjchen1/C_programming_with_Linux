@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Defining and dereferencing pointers
 
 ## 1.1 The stack: visualize what happens in memory
@@ -471,7 +473,7 @@ Please write a C program that uses a function  "behind()" (which you also have t
 
 To help you out, the main function of the program  has already been written, so your job is simply to write the function  behind(), whose protype is also given to you.
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -497,16 +499,16 @@ int main(void) {
 /* Write your function behind() here: */
 ```
 
-### Example
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 5                                                                               
 8 12 7 15 11                                                                    
 ```
 
-#### Output
+**Output: **
 
 ```
 7                                                                               
@@ -518,7 +520,7 @@ int main(void) {
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -556,6 +558,4 @@ void behind(int * arrayPtr, int N){
     }
 }
 ```
-
-
 

@@ -1,4 +1,4 @@
-
+[TOC]
 
 # 1 Understanding computer memory
 
@@ -195,9 +195,9 @@ A delivery company has hired you to manage their  tracking services division. It
 
 Your program should first read an integer number  indicating how many tracking codes you plan on entering. Next, for each  successive tracking code your program should read in the integer length  of code followed by a space and then the type of code ('i' for integer,  'd' for decimal, or 'c' for character). Finally your program should  print the total amount of space required to store all of the tracking  codes (in bytes). If the user enters an incorrect type for any tracking  number, the program should print 'Invalid tracking code type' and exit.
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 3
@@ -206,7 +206,7 @@ Your program should first read an integer number  indicating how many tracking c
 12 d 
 ```
 
-#### Output:
+**Output: **
 
 ```
 143 bytes
@@ -214,7 +214,7 @@ Your program should first read an integer number  indicating how many tracking c
 
  
 
-#### Input:
+**Input:**
 
 ```
 2
@@ -222,16 +222,13 @@ Your program should first read an integer number  indicating how many tracking c
 20 d
 ```
 
-#### Output:
+**Output: **
 
 ```
 163 bytes
 ```
 
-####  
-
-#### Input:
-
+**Input:**
 ```
 4
 5 i
@@ -240,7 +237,7 @@ Your program should first read an integer number  indicating how many tracking c
 3 c
 ```
 
-#### Output:
+**Output: **
 
 ```
 Invalid tracking code type 
@@ -248,7 +245,7 @@ Invalid tracking code type
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -435,7 +432,7 @@ Your program should then calculate the amount of  memory required to store the g
 
 Finally, you need to output the amount of space  required by your variables to the screen. You need to make sure you  provide this output in a form that is easy to read for humans. The  following examples illustrate what this means:
 
-### Examples
+**Examples**
 
 If the user input were:
 
@@ -451,13 +448,13 @@ then the amount of space needed (if we assume that  an integer uses 4 bytes in m
 
  
 
-#### Input:
+**Input:**
 
 ```
 d 654250
 ```
 
-#### Output:
+**Output: **
 
 ```
 5 MB and 234 KB and 0 B
@@ -465,13 +462,13 @@ d 654250
 
  
 
-#### Input:
+**Input:**
 
 ```
 d 35
 ```
 
-#### Output:
+**Output: **
 
 ```
 280 B
@@ -479,7 +476,7 @@ d 35
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

@@ -1,3 +1,5 @@
+[TOC]
+
 # 2 Defining pointers and dereferencing pointers
 
 ## 2.1 Get and print the address of a variable using pointers
@@ -129,7 +131,7 @@ You are developing an elixir that supposedly makes a person younger. You just ne
 
 You are provided with a main function -- please  complete it. Do not change any of the lines of code that have already  been completed. Please only change the lines that are currently  comments.
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -159,15 +161,15 @@ int main(void) {
 }
 ```
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 45
 ```
 
-#### Output
+**Output: **
 
 ```
 The secret address is...fffc                                                    
@@ -177,7 +179,7 @@ Did the elixir work? You are 40 years old!
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -396,28 +398,28 @@ int main(void){
 
  
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 55
 ```
 
-#### Output:
+**Output: **
 
 ```
 Your current age is 55.
 Your new age will be 45!
 ```
 
-#### Input:
+**Input:**
 
 ```
 19
 ```
 
-#### Output:
+**Output: **
 
 ```
 Your current age is 19.
@@ -426,7 +428,7 @@ Your new age will be 38!
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -706,15 +708,15 @@ The main function first reads 6 integers from the  input, and assigns them to th
 
 The main function then prints the reversed array.
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 1 2 3 4 5 6
 ```
 
-#### Output:
+**Output: **
 
 ```
 6 5 4 3 2 1
@@ -722,13 +724,13 @@ The main function then prints the reversed array.
 
  
 
-#### Input: 
+**Input:**
 
 ```
 9 12 3 25 11 5
 ```
 
-#### Output:
+**Output: **
 
 ```
 5 11 25 3 12 9
@@ -736,7 +738,7 @@ The main function then prints the reversed array.
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Using characters
 
 ## 1.1 Declare, assign and print characters with the %c format specifier
@@ -32,7 +34,7 @@ printf ("Programming %c%c %c\n", letter1, letter2, letter3);
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -78,15 +80,15 @@ int main(void) {
 
 Write a C-program that reads an input character  (using scanf) and displays the following pyramid pattern using the  character read: 
 
-### Examples
+**Examples**
 
-#### Input
+**Input**
 
 ```
 #
 ```
 
-#### Output
+**Output**
 
 ```
 ++++#++++
@@ -96,13 +98,13 @@ Write a C-program that reads an input character  (using scanf) and displays the 
 #########
 ```
 
-#### Input
+**Input**
 
 ```
 o
 ```
 
-#### Output
+**Output**
 
 ```
 ++++o++++
@@ -114,7 +116,7 @@ ooooooooo
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -205,23 +207,23 @@ Petra, Rémi and their families went hiking in the  mountains together and reali
 
 You may use the fact that one kilometer equals 0.621371 miles. 
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 4.8
 ```
 
-#### Output: 
+**Output: **
 
 ```
 2.982581
 ```
 
-### 
 
-我的程序：
+
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -239,7 +241,7 @@ int main(void) {
 
 ## 4.1 Divide in C
 
-### （1）整数相除，截断小数，而不是四舍五入
+### 4.1.1 整数相除，截断小数，而不是四舍五入
 
 5/2，得到2
 
@@ -256,9 +258,15 @@ int main(void) {
 
 
 
-分子分母都是整数，输出就应该是整数格式%d，，否则会warning，“printf("5/2 equals %lf\n", 5/2);”输出2.000000；
+### 4.1.2 分子分母都是整数，输出就应该是整数格式%d
 
-同理，分子分母中，只要有一个小数，输出就应该是小数格式%lf，否则会warning，“printf("5.0/2 equals %d\n", 5.0/2);”输出2.5；
+否则会warning，“printf("5/2 equals %lf\n", 5/2);”输出2.000000；
+
+
+
+### 4.1.3 分子分母中，只要有一个小数，输出就应该是小数格式%lf，
+
+否则会warning，“printf("5.0/2 equals %d\n", 5.0/2);”输出2.5；
 
 （warning，不是error，还是会可以输出的）
 
@@ -285,15 +293,15 @@ Please write a C-program that reads a decimal number representing a temperature 
 
 Temperature (°F) = Temperature (°C) × 9.0 / 5.0 + 32.0
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 192
 ```
 
-#### Output:
+**Output: **
 
 ```
 377.6
@@ -301,13 +309,13 @@ Temperature (°F) = Temperature (°C) × 9.0 / 5.0 + 32.0
 
  
 
-#### Input:
+**Input:**
 
 ```
 30.5
 ```
 
-#### Output:
+**Output: **
 
 ```
 86.9 
@@ -317,7 +325,7 @@ Temperature (°F) = Temperature (°C) × 9.0 / 5.0 + 32.0
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -353,16 +361,16 @@ int main(void) {
 
 You have a number of loose matches that you would  like to put back into boxes. Write a program that calculates and  displays how many full boxes you will have and how many leftover matches you will have after filling all the boxes you can. Your program should  take as input the number of matches to be boxed up followed by the size  of a each box. Next it should print out the number of full boxes  followed by the number of remaining matches.
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 666
 13
 ```
 
-#### Output: 
+**Output: **
 
 ```
 51
@@ -371,7 +379,7 @@ You have a number of loose matches that you would  like to put back into boxes. 
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -411,9 +419,9 @@ You are helping a teacher average grades. You get  bored computing averages by h
 
 Your program must first read an integer indicating  the number of grades to be averaged. Next, your program will read the  grades one by one, all of which are integers as well. Finally, your  program will calculate and print the average of the grades **to two decimal places**.
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 4
@@ -423,7 +431,7 @@ Your program must first read an integer indicating  the number of grades to be a
 9
 ```
 
-#### Output:
+**Output: **
 
 ```
 10.75
@@ -433,7 +441,7 @@ Your program must first read an integer indicating  the number of grades to be a
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -495,16 +503,16 @@ The population of a city has risen sharply over the  past few years, thanks to a
 
 Please write a C-program that first reads an integer representing the current population of the city, and that next reads a  decimal number for the projected population growth as a percentage  (either positive or negative). The program should then display the  expected population of the city in a year as a whole number. By  convention we will only consider "whole" people. So a population of 31.8 inhabitants will be considered as having 31 inhabitants. 
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 123
 7.0
 ```
 
-#### Output:
+**Output: **
 
 ```
 131
@@ -512,7 +520,7 @@ Please write a C-program that first reads an integer representing the current po
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -535,29 +543,29 @@ You just started learning a new language and decide  to buy a few books to pract
 
 Please write a C-program that starts by reading the  amount of money you have (which may be a double), then reads the price  per book (which again may be a double). The program should then display  an integer, namely the largest number of books that you can purchase  with the given amount of money.
 
-### Examples
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 48.0
 3.50
 ```
 
-#### Output
+**Output: **
 
 ```
 13
 ```
 
-#### Input
+**Input:**
 
 ```
 27.0
 5.0
 ```
 
-#### Output
+**Output: **
 
 ```
 5
@@ -567,7 +575,7 @@ Please write a C-program that starts by reading the  amount of money you have (w
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -587,15 +595,15 @@ You are building a new home and you have calculated  exactly how much cement you
 
 Your program should first read a decimal number  representing the amount of cement needed (in pounds) for the foundations of your new home. Your program should then display the total cost of  the cement bags you have to purchase to have enough cement to build your foundation. **To make your program simpler, you are guaranteed that the  amount of cement needed will NEVER be a multiple of 120.**（否则，就要难很多。）
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 295.8
 ```
 
-#### Output:
+**Output: **
 
 135
 
@@ -604,7 +612,7 @@ In this example, you need 295.8  pounds of cement. Since the store only sells ce
 
 
 
-我的程序（无法应对weight是120的整数倍的情况）：
+**我的程序：**（无法应对weight是120的整数倍的情况）
 
 ```c
 #include <stdio.h>

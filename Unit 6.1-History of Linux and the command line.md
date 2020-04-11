@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Discovering operating systems
 
 ## 1.1 Operating systems genesis: definition, services (files, memory, processes), key dates
@@ -12,12 +14,16 @@ Android by Google.
 
 Linux or even Unix.
 
+
+
 ### 1.1.2 Unix, Linux.
 
 Unix has been around quite a bit longer than Linux.
 But these two operating systems are indeed related.
 Linux is a Unix-like operating system that is open source.
 This means that the Linux kernel, created by Linus Torvalds and enhanced and expanded upon by thousands of programmers, is available to the world for free.
+
+
 
 ### 1.1.3 What is an operating system?
 
@@ -30,6 +36,8 @@ Applications use the services provided by the operating system.
 And the operating system exploits the hardware resources that are at its disposal to render these services to the applications.
 
 <img src="/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200409002949351.png" alt="image-20200409002949351" style="zoom:33%;" />
+
+
 
 ### 1.1.4 Some examples of services provided by the operating system
 
@@ -169,7 +177,7 @@ Multiplexing is a technique of sending multiple pieces of information over a com
 
 Multiplexing makes it possible to share the same resource between several users.
 
-### 1.2.6 2 business
+### 1.2.6 “2 business”
 
 General Electric's contribution to the MULTICS project was to design and build the underlying machine, whereas Bell Labs took on the design and writing of the operating system code, in particular the aspects related to remote access by multiple users.
 

@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Using arrays of integers
 
 ## 1.1 Store integers in an array
@@ -46,16 +48,16 @@ int main(void){
 
 Your grandparents gave you a fantastic cooking  recipe but you can never remember how much of each ingredient you have  to use! There are 10 ingredients in the recipe and the quantities needed for each of them are given as input (in grams). Your program must read  10 integers (the quantities needed for each of the ingredients, in  order) and store them in an array. It should then read an integer which  represents an ingredient's ID number (between 0 and 9), and output the  corresponding quantity.
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 500 180 650 25 666 42 421 1 370 211
 3
 ```
 
-#### Output:
+**Output: **
 
 ```
 25
@@ -63,7 +65,7 @@ Your grandparents gave you a fantastic cooking  recipe but you can never remembe
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -129,11 +131,11 @@ Your program should first read the number of cars to be weighed (integer) follow
 
 You may assume that there are no more than 50 boxcars. 
 
-### Example 1
+**Examples**
 
 In this example, there are 5 boxcars with different  weights summing to 110.0. The ouput shows that we are modifying all the  boxcars so that they each carry a weight of 22.0 (which makes a total of 110.0 for the entire train). So we remove 18.0 for the first boxcar, we add 10.0 for the second, we add 2.0 for the third, etc.
 
-#### Input
+**Input:**
 
 ```
 5
@@ -144,7 +146,7 @@ In this example, there are 5 boxcars with different  weights summing to 110.0. T
 33.0
 ```
 
-#### Output
+**Output: **
 
 ```
 -18.0
@@ -156,7 +158,7 @@ In this example, there are 5 boxcars with different  weights summing to 110.0. T
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -236,11 +238,11 @@ int main(void) {
 
 You plan to make a delicious meal and want to take  the money you need to buy the ingredients. Fortunately you know in  advance the price per pound of each ingredient as well as the exact  amount you need. The program should read in the number of ingredients  (up to a maximum of 10 ingredients), then for each ingredient the price  per pound. Finally your program should read the weight necessary for the recipe (for each ingredient in the same order). Your program should  calculate the total cost of these purchases, then display it with 6  decimal places.
 
-### Example
+**Examples**
 
 There are 4 ingredients and they all have a  different price per pound: 9.90, 5.50, 12.0, and 15.0. You must take  0.25 lbs of the first, 1.5 lbs of the second, 0.3 lbs of the third and 1 lb of the fourth. It will cost exactly $29.325000.
 
-#### Input:
+**Input:**
 
 ```
 4
@@ -248,7 +250,7 @@ There are 4 ingredients and they all have a  different price per pound: 9.90, 5.
 0.250 1.5 0.300 1.0
 ```
 
-#### Output:
+**Output: **
 
 ```
 29.325000
@@ -256,7 +258,7 @@ There are 4 ingredients and they all have a  different price per pound: 9.90, 5.
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -320,9 +322,9 @@ int main(void)
 
 You want to determine the number of cities in a  given region that have a population strictly greater than 10,000. To do  this, you write a program that first reads the number of cities in a  region as an integer, and then the populations for each city one by one  (also integers).
 
-### Example
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 6
@@ -334,7 +336,7 @@ You want to determine the number of cities in a  given region that have a popula
 23590
 ```
 
-#### Output
+**Output: **
 
 ```
 2
@@ -342,7 +344,7 @@ You want to determine the number of cities in a  given region that have a popula
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -398,15 +400,15 @@ int main(void){
 
 Create a program that displays on the screen a square of n x n stars, with the integer n given as an input.
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 5
 ```
 
-#### Output:
+**Output: **
 
 ```
 *****
@@ -416,15 +418,14 @@ Create a program that displays on the screen a square of n x n stars, with the i
 *****
 ```
 
-####  
 
-#### Input:
+**Input:**
 
 ```
 3
 ```
 
-#### Output:
+**Output: **
 
 ```
 ***
@@ -434,7 +435,7 @@ Create a program that displays on the screen a square of n x n stars, with the i
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -503,9 +504,9 @@ All expenses for the year have been recorded and  classified in a multitude of f
 
 Your program will have to read a sequence of  positive integers and display their sum. We do not know how many  integers there will be, but the sequence always ends with the value -1  (which is not an expense, just an end marker).
 
-### Example 1
+**Examples 1**
 
-#### Input
+**Input:**
 
 ```
 1000
@@ -514,29 +515,29 @@ Your program will have to read a sequence of  positive integers and display thei
 -1
 ```
 
-#### Output
+**Output: **
 
 ```
 3500
 ```
 
-### Example 2
+**Examples 2**
 
-#### Input
+**Input:**
 
 ```
 -1
 ```
 
-#### Output
+**Output: **
 
 ```
 0
 ```
 
-### Example 3
+**Examples 3**
 
-#### Input
+**Input:**
 
 ```
 150
@@ -548,7 +549,7 @@ Your program will have to read a sequence of  positive integers and display thei
 -1
 ```
 
-#### Output
+**Output: **
 
 ```
 5610
@@ -556,7 +557,7 @@ Your program will have to read a sequence of  positive integers and display thei
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -606,17 +607,17 @@ int main(void) {
 
 In order to be able to better fight various  epidemics in a region, the department of medicine of a major university  has launched a large study. Researchers are interested in how fast an  epidemic spreads, and therefore the speed at which health measures must  be put in place. Your program should first read an integer representing  the total population of the area. Knowing that a person was infected on  day 1 and that each infected person contaminates two new people every  day, you must calculate the day at which the entire population of the  area will be infected. 
 
-### Examples
+**Examples**
 
 For a total population of 3 inhabitants, on day 1 a  single person is infected. The next day, that person contaminates 2 new  people so there are 3 infected people in total. This is the entire  population, so it takes 2 days to contaminate the entire population.
 
-#### Input:
+**Input:**
 
 ```
 3
 ```
 
-#### Output:
+**Output: **
 
 ```
 2
@@ -624,13 +625,13 @@ For a total population of 3 inhabitants, on day 1 a  single person is infected. 
 
 For a total population of 10 inhabitants, on day 1 a single person is infected. This is followed by 2 new people on the  second day for a total of 3 infected people. On the third day, 6 new  people are infected for a total of 9 infected people. On the fourth day  the last of the 10 people is infected (though the epedemic had the  potential to infect 18 people on the fourth day) so your program should  output '4'.
 
-#### Input:
+**Input:**
 
 ```
 10
 ```
 
-#### Output:
+**Output: **
 
 ```
 4
@@ -638,7 +639,7 @@ For a total population of 10 inhabitants, on day 1 a single person is infected. 
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -670,16 +671,16 @@ We would like you to develop a program capable of  making a child play automatic
 
 Your program must first read an integer indicating  the number that the child will have to find during the game. Next the  program should repeatedly read the player's guesses and display the text "it is more" if the child has submitted a smaller number or "it is  less" if they have submitted a larger number. Once the correct number is reached, the program should print "Number of tries needed:" followed by a new line and the integer number of tries that it took the guesser.
 
-### Example 1
+**Examples 1**
 
-#### Input
+**Input:**
 
 ```
 5
 1 2 3 4 5
 ```
 
-#### Output
+**Output: **
 
 ```
 it is more
@@ -690,16 +691,16 @@ Number of tries needed:
 5
 ```
 
-### Example 2
+**Examples 2**
 
-#### Input
+**Input:**
 
 ```
 10
 5 15 8 12 11 10
 ```
 
-#### Output
+**Output: **
 
 ```
 it is more
@@ -713,7 +714,7 @@ Number of tries needed:
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -749,16 +750,16 @@ University chemists have developed a new process for the manufacturing of a drug
 
 Your program should first read two integers  representing the minimum and maximum safe temperatures. Next, your  program should continuously read temperatures (integers) that are being  provided by the device. Once the chemical reaction is complete the  device will send a value of -999, indicating to you that temperature  readins are done. For each recorded temperature that is in the correct  range (it could also be equal to the min or max values), your program  should display the text "Nothing to report". But as soon as a  temperature reaches an unsafe level your program must display the text  "Alert!" and stop reading temperatures (although the device may continue sending temperature values).
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 10 20
 15 10 20 0 15 -999
 ```
 
-#### Output:
+**Output: **
 
 ```
 Nothing to report
@@ -769,14 +770,14 @@ Alert!
 
  
 
-#### Input:
+**Input:**
 
 ```
 0 100
 15 50 75 -999
 ```
 
-#### Output:
+**Output: **
 
 ```
 Nothing to report
@@ -786,7 +787,7 @@ Nothing to report
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

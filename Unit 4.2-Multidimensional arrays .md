@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Working with arrays and pointers
 
 ## 1.1 Define and work with arrays of pointers and use multiple ways for dereferencing
@@ -89,16 +91,16 @@ Take a look at the code that is already given to  you. Your job is to add four l
 
 Beneath each such line you will find an explanation  of what precisely your line of code is supposed to do as well as what  type of array addressing you are to use. Please read and follow these  directions carefully. Do not change anything else in the code that is  provided as our grading system will detect such changes and mark your  solution as incorrect.
 
-### Example
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 10.5 20.2                                                                                                                               
 30.3 40.4 50.5
 ```
 
-#### Output
+**Output: **
 
 ```
 Total amount of wet ingredients: 30.70 grams.                                                                                           
@@ -107,7 +109,7 @@ Ratio of wet to dry ingredients: 3.95.
 New water amount: 15.35 grams, new oil amount: 15.35 grams. 
 ```
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -162,7 +164,7 @@ int main(void) {
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -334,19 +336,19 @@ You entered:
 
 Your goal is to  read a 68-word text from the input and then print it to the screen  backwards. Individual words do not have to be spelled backwards, but  rather your program should print out the last word first, then the  second-to-last word, etc. No word has more than 40 characters.
 
-### Example
+**Examples**
 
-#### Input
+**Input:**
 
 Science Computer on Papers Selected Knuth, Ervin  Donald ― correct." be will results the that reader a convince to and  works algorithm an way the communicate to concepts, mathematical as well as forms literary and aesthetic traditional with works who essayist an  ideally is programmer A clearly. them understand can beings human that  so and quickly them perform can machines computing that so written are  programs best "The
 
-#### Output
+**Output: **
 
 "The best programs are written so that computing  machines can perform them quickly and so that human beings can  understand them clearly. A programmer is ideally an essayist who works  with traditional aesthetic and literary forms as well as mathematical  concepts, to communicate the way an algorithm works and to convince a  reader that the results will be correct." ― Donald Ervin Knuth, Selected Papers on Computer Science
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

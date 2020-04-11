@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Allocating memory at runtime
 
 ## 1.1 Allocate memory in the heap using malloc
@@ -363,9 +365,9 @@ This function "allocateString()" takes as argument  an integer (of type int), re
 
 In your main() function you should call the function allocateString() twice: once for the label containing the "light"  setting and once for the "dark" setting. You are provided with some code already that explains precisely what you need to do. Please do not  change the code that has been given to you. Please only change those  lines that say "// add a line of code...".
 
-### Example
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 4 6
@@ -373,17 +375,14 @@ hell
 dunkel
 ```
 
-#### Output
+**Output: **
 
 ```
 Local settings: hell - dunkel
 ```
 
-### Note
 
-You may submit as many solutions as you wish. Only your highest score will be kept.
-
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -433,8 +432,7 @@ char * allocateString(int numChars){
 ```
 
 
-
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -485,7 +483,7 @@ char * allocateString(int numChars){
 
 
 
-注意：
+**注意：**
 
 ```    scanf("%s", strLight);```
 ``` scanf("%s", strDark);```

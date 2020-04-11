@@ -1,3 +1,5 @@
+[TOC]
+
 #  1 Creating a single node
 
 ## 1.1 Create a node of a linked list
@@ -83,27 +85,27 @@ int main(void) {
 }
 ```
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 Petra 25
 ```
 
-#### Output:
+**Output: **
 
 ```
 New student created: Petra is 25 years old.   
 ```
 
-#### Input:
+**Input:**
 
 ```
 Remi 18
 ```
 
-#### Output:
+**Output: **
 
 ```
 New student created: Remi is 18 years old.   
@@ -119,7 +121,7 @@ It may be useful to create a function copyStr() which copies one string to anoth
 
 
 
-我的程序（错误）：
+**我的程序（错误版）：**
 
 ```c
 #include <stdio.h>
@@ -387,7 +389,7 @@ You will need the function definition (from the  previous task) for createStuden
 
 Your new task is to write a function append() which  takes as input two pointers: the first pointer holds the address of the  current end of the linked list of students, the second pointer points to a newly created student. Your function should append this new student  to the linked list and return the address (a struct student *) of the  new end of the list. 
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -433,15 +435,15 @@ int main(void) {
    createStudent() and any other functions you created for the previous task. */
 ```
 
-### Example
+**Examples**
 
-#### Input: 
+**Input:**
 
 ```
 25 18 32
 ```
 
-#### Output: 
+**Output: **
 
 ```
 Petra is 25 years old.
@@ -451,7 +453,7 @@ Mike is 32 years old.
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -616,7 +618,7 @@ You will need the function definitions (from  previous tasks) for createStudent(
 
 Your new task is to write a function printStudents() which takes as input a pointer that holds the address of the start of a linked list of students. Your function should then print this list of  students to the screen as specified in the example below. Your function  should not return anything.
 
-### Provided code
+**Provided code**
 
  
 
@@ -669,15 +671,15 @@ int main(void) {
    the previous tasks. */
 ```
 
-### Example
+**Examples**
 
-#### Input: 
+**Input:**
 
 ```
 25 18 32
 ```
 
-#### Output: 
+**Output: **
 
 ```
 Petra is 25 years old.
@@ -687,7 +689,7 @@ Mike is 32 years old.
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -855,7 +857,7 @@ You will need the function definitions (from  previous tasks) for createStudent(
 
 Your current task is to write a function  freeStudents() which takes as input a pointer that holds the address of  the start of a linked list of students. Your function should then free  the space allocated for each student in this list of students. Your  function should not return anything.
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -897,15 +899,15 @@ int main(void) {
    created for the previous tasks. */
 ```
 
-### Example
+**Examples**
 
-#### Input: 
+**Input:**
 
 ```
 25 18 32
 ```
 
-#### Output: 
+**Output: **
 
 ```
 Petra is 25 years old.
@@ -915,7 +917,7 @@ Mike is 32 years old.
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -1134,7 +1136,7 @@ In this task you will work with the linked list of  digits we have created in th
 
 Your task is to write a new function  divisibleByThree() which takes as input a pointer that holds the address of the start of a linked list of digits. Your function should then  check whether the number stored in this linked list of digits is  divisible by three. The function should return the value 1 if indeed the number is divisible by three and it should return the value 0  otherwise.
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -1215,41 +1217,41 @@ struct digit *readNumber(void) {
 // Write your divisibleByThree() function here
 ```
 
-### Examples
+**Examples**
 
-#### Input: 
+**Input:**
 
 ```
 234                                                                          
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 234
 is divisible by 3.
 ```
 
-#### Input: 
+**Input:**
 
 ```
 74658
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 74658
 is divisible by 3.
 ```
 
-#### Input: 
+**Input:**
 
 ```
 245
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 245
@@ -1258,7 +1260,7 @@ is not divisible by 3.
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -1474,7 +1476,7 @@ In this task you will work with the linked list of  digits we have created in th
 
 Your task is to write a new function changeThrees()  which takes as input a pointer that holds the address of the start of a  linked list of digits. Your function should change all of those digits  in this linked list that equal 3 to the digit 9, and count how many  replacements were made. The function should return this number of  replacements.
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -1576,15 +1578,15 @@ int divisibleByThree(struct digit * start) {
 
  
 
-### Examples
+**Examples**
 
-#### Input: 
+**Input:**
 
 ```
 234345632                                                                       
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 234345632
@@ -1594,13 +1596,13 @@ The new number is 294945692
 
  
 
-#### Input: 
+**Input:**
 
 ```
 4393293
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 4393293
@@ -1610,13 +1612,13 @@ The new number is 4999299
 
  
 
-#### Input: 
+**Input:**
 
 ```
 475692
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 475692
@@ -1626,7 +1628,7 @@ The new number is 475692
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -2105,7 +2107,7 @@ You are provided with (but are not required to use)  the functions and prototype
 
 Your task is to write a new function countRedun()  which takes as input a pointer that holds the address of the start of a  linked list of digits. Your function should count how many redundancies  can be observed in the number stored in this list and return this count  of redundancies. A redundancy is a digit which has previously already  occurred in the number. For example, in the number 39534, the second '3' is a redundancy.
 
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -2223,41 +2225,41 @@ int changeThrees(struct digit * start) {
 
 
 
-### Examples
+**Examples**
 
-#### Input: 
+**Input:**
 
 ```
 5243
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 5243
 contains 0 redundancies.
 ```
 
-#### Input: 
+**Input:**
 
 ```
 5256202
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 5256202
 contains 3 redundancies.
 ```
 
-#### Input: 
+**Input:**
 
 ```
 7777
 ```
 
-#### Output: 
+**Output: **
 
 ```
 The number 7777
@@ -2266,7 +2268,7 @@ contains 3 redundancies.
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

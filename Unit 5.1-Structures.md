@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Define structures
 
 ## 1.1 Define and use structures
@@ -152,15 +154,15 @@ You should not modify the provided code.
 
  
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 2018 10 2
 ```
 
-#### Output:
+**Output: **
 
 ```
 10/02/2018
@@ -168,7 +170,7 @@ You should not modify the provided code.
 
  
 
-### Provided Code:
+**Provided Code:**
 
 ```c
 #include <stdio.h>
@@ -192,7 +194,7 @@ int main(void) {
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -347,15 +349,15 @@ In this problem you will continue developing the  data feature which you started
 
 You are provided with a familiar date structure  definition, a main function as well as the function prototypes for the  readDate(), printDate(), and advanceDate() functions. Do not modify any  of the given code. Simply add your function definitions underneath the  main() function. For the readDate() and printDate() functions you may  simply copy and paste the code you developed in the previous task. 
 
-### Examples
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 2018 10 2
 ```
 
-#### Output:
+**Output: **
 
 ```
 10/02/2018                                                                      
@@ -365,13 +367,13 @@ You are provided with a familiar date structure  definition, a main function as 
 
  
 
-#### Input:
+**Input:**
 
 ```
 2018 10 31
 ```
 
-#### Output:
+**Output: **
 
 ```
 10/31/2018                                                                      
@@ -381,13 +383,13 @@ You are provided with a familiar date structure  definition, a main function as 
 
  
 
-#### Input:
+**Input:**
 
 ```
 2018 11 30
 ```
 
-#### Output:
+**Output: **
 
 ```
 11/30/2018                                                                      
@@ -397,13 +399,13 @@ You are provided with a familiar date structure  definition, a main function as 
 
  
 
-#### Input:
+**Input:**
 
 ```
 2018 12 31
 ```
 
-#### Output:
+**Output: **
 
 ```
 12/31/2018                                                                      
@@ -411,9 +413,7 @@ You are provided with a familiar date structure  definition, a main function as 
 01/01/2019
 ```
 
-###  
-
-### Provided code
+**Provided code**
 
 ```c
 #include <stdio.h>
@@ -443,7 +443,7 @@ int main(void) {
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>

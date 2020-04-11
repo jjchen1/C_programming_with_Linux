@@ -1,3 +1,5 @@
+[TOC]
+
 # 1 Using the if statement
 
 ## 1.1 Use an if statement with a static condition
@@ -126,15 +128,15 @@ You are planning a car trip so you post on a carpooling website in order to shar
 
 If you have 0 passengers the carpool site does not  charge anything and you alone pay the full cost of the trip. If you have 1 or more passengers the carpool site adds a $1 fee to the cost of the  trip and evenly divides the total cost ($1 fee + gas) among the  passengers and you. You want to write a program that calculates the cost you have to pay. The program should read the number of passengers (an  integer) and the cost of gas for the trip (a decimal number). The  program should then print the cost that you have to pay (a decimal  number) with 2 digits after the decimal point. 
 
-### Examples
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 0 23.9
 ```
 
-#### Output
+**Output: **
 
 ```
 23.90
@@ -142,13 +144,13 @@ If you have 0 passengers the carpool site does not  charge anything and you alon
 
  
 
-#### Input
+**Input:**
 
 ```
 2 45.5
 ```
 
-#### Output
+**Output: **
 
 ```
 15.50
@@ -156,13 +158,13 @@ If you have 0 passengers the carpool site does not  charge anything and you alon
 
  
 
-#### Input
+**Input:**
 
 ```
 3 34.8
 ```
 
-#### Output
+**Output: **
 
 ```
 8.95
@@ -172,7 +174,7 @@ If you have 0 passengers the carpool site does not  charge anything and you alon
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -198,29 +200,29 @@ The hostel in which you plan to spend the night  tonight offers very interesting
 
 Your program will read an integer (between 0 and 12) indicating the number of hours past noon of your arrival. For example, 0 indicates a noon arrival, 1 a 1pm arrival, 12 a midnight arrival, etc.  The base price is 10 dollars, and 5 dollars are added for every hour  after noon. Thankfully the total is capped at 53 dollars, so you'll  never have to pay more than that. Your program should print the price  (an integer) you have to pay, given the input arrival time.
 
-### Example 1
+**Examples 1**
 
-#### Input
+**Input:**
 
 ```
 7
 ```
 
-#### Output
+**Output: **
 
 ```
 45
 ```
 
-### Example 2
+**Examples 2**
 
-#### Input
+**Input:**
 
 ```
 10
 ```
 
-#### Output
+**Output: **
 
 ```
 53
@@ -296,16 +298,16 @@ You arrive in front of a bridge that you must cross  to reach a village before d
 
 Your program should read two integers, between 1 and 6, representing the values of each die. If the sum is greater than or  equal to 10, then you must pay a special fee (36 coins). Otherwise, you  pay twice the sum of the values of the two dice. Your program must then  display the text "Special tax" or "Regular tax" followed by the amount  you have to pay on the next line.
 
-### Example
+**Examples**
 
-#### Input
+**Input:**
 
 ```
 5
 6
 ```
 
-#### Output
+**Output: **
 
 ```
 Special tax
@@ -314,14 +316,14 @@ Special tax
 
  
 
-#### Input
+**Input:**
 
 ```
 4
 3
 ```
 
-#### Output
+**Output: **
 
 ```
 Regular tax
@@ -331,8 +333,7 @@ Regular tax
 *Warning*: You will be graded on your output, so do not include any print statements that prompt a user for input.
 
 
-
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -364,11 +365,11 @@ You will then display the text "Total weight for  team 1:" followed by the weigh
 
 You are guaranteed that the two teams will not have the same total weight.
 
-### Example
+**Examples**
 
 Each team is composed of four players. Those of the  first weigh 110, 113, 112, and 117kg, while those of the second weigh  106, 102, 121, and 111kg. Team 1 weighs a total of 452kg whereas team 2  weighs a total of 440kg, giving team 1 an advantage.
 
-#### Input
+**Input:**
 
 ```
 4
@@ -382,7 +383,7 @@ Each team is composed of four players. Those of the  first weigh 110, 113, 112, 
 111
 ```
 
-#### Output
+**Output: **
 
 ```
 Team 1 has an advantage
@@ -390,7 +391,7 @@ Total weight for team 1: 452
 Total weight for team 2: 440
 ```
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -471,16 +472,16 @@ The hostel in which you stop for the night changes  its prices according to the 
 
 One room costs nothing if you are 60 (the age of the innkeeper), or 5 dollars if you are less than 10 years old. For  everyone else, the cost is 30 dollars plus an additional 10 dollars if  you bring more than 20 pounds of luggage. Your program should read the  customer's age first, then the weight of their luggage, then output the  price they have to pay.
 
-### Example
+**Examples**
 
-#### Input:
+**Input:**
 
 ```
 22
 25
 ```
 
-#### Output:
+**Output: **
 
 ```
 40
@@ -488,7 +489,7 @@ One room costs nothing if you are 60 (the age of the innkeeper), or 5 dollars if
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
@@ -514,9 +515,7 @@ int main(void){
 
 
 
-# 4 Negating a logic condition using the logic 
-
-# operator NOT
+# 4 Negating a logic condition using the logic operator NOT
 
 ## 4.1 Negate a logical condition using NOT
 
@@ -594,46 +593,46 @@ the "Dorthonion" is **12 meters tall** **or more** and its leaves are composed o
 
 Your program should read the height and the number  of leaflets of a given tree (both integers), and should be able to  determine and display the name of the corresponding tree. If the height and number of leaflets does not match any of the tree type  descriptions, your program should display "Uncertain".
 
-### Example 1
+**Examples 1**
 
-#### Input
+**Input:**
 
 ```
 12
 12
 ```
 
-#### Output
+**Output: **
 
 ```
 Calaelen
 ```
 
-### Example 2
+**Examples 2**
 
-#### Input
+**Input:**
 
 ```
 4
 9
 ```
 
-#### Output
+**Output: **
 
 ```
 Tinuviel
 ```
 
-### Example 3
+**Examples 3**
 
-#### Input
+**Input:**
 
 ```
 4
 6
 ```
 
-#### Output
+**Output: **
 
 ```
 Uncertain
@@ -641,7 +640,7 @@ Uncertain
 
 
 
-我的程序：
+**我的程序：**
 
 ```c
 #include <stdio.h>
