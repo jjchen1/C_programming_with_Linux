@@ -352,209 +352,528 @@ gcc -std=c11 -Wall -fmax-errors=10 -Wextra image.o superimage.o -o superimage
 
 ## 2.1 Makefile
 
-PROFESSOR: We will now see how to automate all of the necessary steps
-to build the final executable program from source code spread out
-over multiple files.
-We will start with our previous program that
-uses functions in the file weatherstats.c
-to display the average as well as the highest temperature
-from an array of temperatures.
-Here on the left you see the program that we had written previously.
-It has an array of temperatures, so type double and two variables
-of type double, one named average and one named max.
-And both of these variables are initialized by calling functions
-from our weatherstats source file.
-So with average, it's computed by calling the function
-averageTemp, to which we pass the temperatures
-array and the size of that array.
-And max is initialized by calling MaxTemp
-to which we also pass the temperatures array
-as well as the size of that array.
-And then simply, we print out the average seven-day temperature as well
-as the highest temperature.
-And that's it.
-Just to quickly show you our weatherstats file only
-contains these two functions, the average temperature function
-and the max temperature function, which does exactly that.
-And then the third file we have is the weatherstats.h file, which
-contains the two headers.
-So let me return to our program.
-And there's nothing else in my directory.
-I deleted everything else.
-If I type LS here on the right hand side in the command prompt,
-I see I only have program.c, weatherstats.c, and weatherstats.h.
-I deleted all the object files in the executable.
-So I cannot say run program right now because there is no such thing
-as program.
-Now the purpose of a make file is to automate
-the building of executable programs.
-We remember that it was kind of a nuisance.
-We had to compile program.c into an object file program.o.
-Then we had to separately compile weatherstats.c into weatherstats.o.
-And then we had to link those two together.
-So there were really three steps involved.
-And to have to type all these commands and the compiler flags
-was kind of annoying.
-I will now show you how to use the program Make--
-it's called Make-- to do multiple things all at once.
-It'll do all of these compiling and linking steps for you.
-The program Make, which is a program that
-comes as part of a Linux distribution, reads instructions
-from a so-called Makefile And so we're going
-to create such a file of instructions.
-To do so, I need to first create the file.
-I'll do that with a touch command.
-And now I can find it in my file browser.
-So here's my Make file.
-I'll open that.
-And currently it has nothing in it.
-So now we need to put something in it.
-A Makefile has a very specific structure.
-And the name of the Makefile is also fixed.
-You can't name it anything else.
-Here's the fixed structure.
-I will first write this in English and then I'll give you an example.
-First always comes a target.
-And I'll tell you what that is.
-A target is what is to be produced.
-Then a colon, and then what is needed to do so, then a new line, a tab--
-very important, you can't put spaces there, it has to be a tab--
-and how to produce what you want to produce.
-So let's start right out of the gate.
-How do we produce our executable named program?
-So that's my target.
-Put a colon there.
-And then, what is needed to do so?
-Well, in order to get the executable program,
-I need to program.0 and weatherstats.o.
-These two files, I can then link together to create my program.
-And how do I link those together?
-First, I need to push my tab key, not spaces.
-And now comes the command on how to do so.
-And because I don't want to type all the compiler flags and all that,
-I'm going to copy that.
-But we'll then go through it.
-So the Built command is GCC, and then all these compiler flags.
-My output file is program.
-So that's why the minus o program here in the very end.
-And the two files that I want to link together
-are program.o and weatherstats.o.
-And we're done with this line.
-Now we need to also tell the Makefile well, how do you make program.o.
-And what does it depend on?
-Well, program.o depends on program.c as well as weatherstats.h.
-It needs that h file.
-Because pound sign includes that h file.
-And how do I build it once I have it?
-Again, I'm going to just copy that and then go through it with you.
-And the compile command is GCC and all these flags
-that I was always too lazy to type.
-But now since I'm simply pasting them in here, I can just put them there.
-Then a minus c flag, that's very important,
-to tell the compiler we're not building an executable.
-We're only translating into machine language.
-And then the file program.c, which is our source code, and the name
-of the output file, minus o program.o.
-And how do I create weatherstats.o?
-With a very similar way.
-It's created from weatherstats.c.
-And how is that done?
-Again, I'm going to copy that in and then simply go through it with you.
-So there's my GCC command, all the flags, the minus c flag.
-And the source code is in weatherstats.c.
-The output is called weatherstats.o.
-And that's it.
-So now I'm going to remove my explanation at the top
-because the Make program wouldn't understand English.
-And I have these three targets.
-Program is my ultimate target.
-And whatever it needs, program.o comes underneath.
-So program.o and weatherstats.o.
-And they're both defined on how they are to be made.
-So I'm going to save this.
+### 2.1.1 Makefile的内容
 
-And I can now run the Make command.
-And I'm going to do that.
-I can do that simply by typing Make on the right
-or by putting my Build command as simply Make.
-So I'll show you this way fast.
-So as soon as I hit Run It, the Make command
-will start working which executes Make.
-But I'm going to watch in the browser what's happening.
-So first off all, program.o showed up, weatherstats.o showed up,
-and program showed up.
-So three new files showed up.
-And here in my window on the right, my terminal window, program was executed.
-It says the average seven-day temperature is 7.91
-and the highest temperature is 15.3 degrees.
-I could have accomplished the same thing by simply
-typing Make here on the right.
-So let me demonstrate that.
-Let me remove program and also everything that has an extension .o.
-So see, everything is gone again.
-And if I simply type Make here at the command prompt,
-the same thing happens as before.
-And it even echoes the GCC commands that were executed.
-So that's nice to see.
-All three commands were executed.
-First, the commands to produce program.o was executed.
-Then the command to produce weatherstats.o.
-And then finally, they were linked together.
-Now let's see what happens if I make a little change to something.
-So let's go to the weatherstats.c file and make a little change.
-Let's suppose I also wanted a minimum temperature function here.
-I'm going to copy the Maximum Temperature function
-and call it Minimum Temperature.
-And then the function itself, the function body
-is pretty much the same, except I'm going to call it Minimum.
-And I find the minimum by comparing in the opposite way
-to how it compared to the maximum.
-So this is Minimum.
-And I'm returning the minimum here.
-Let me save that.
-And let me also quickly update my weatherstats.h file.
-Because I now have a minimum temperature function that I'm adding in there.
-So I need a new header with Min.
-And there it is.
-Save it.
-And probably in my program, I want to call that function.
-So I'm going to call it.
-I'm going to copy this line printf at the lowest temperature is.
-And instead of Max, I want to call the Min function.
-I could do that by simply creating a new variable named Min in the same way
-I created it before.
-Or I can actually call Min Temp directly here.
+Makefile，将前文的“先生成weatherstats.o和program.o，再生成可执行程序program”的步骤，打包。
 
-Let's save that.
-And now, rather than having to painfully compile each file by hand,
-then link it, and all that, I can simply type Make again here
-at the command line.
-And all these three commands are executed again.
-And now if I run my program, it also displays the lowest temperature.
-Now suppose I'm going to only make a little change.
-Instead of lowest temp, I'm going to say lowest temperature.
-And that's the only change I make.
-So I haven't really updated my weatherstats.c file.
-And the Make command is actually so smart it realizes
-that there's nothing to be done.
-It doesn't have to re-translate weatherstats.c into weatherstats.o.
-There's nothing to be changed.
-So when I now type Make here at the command prompt,
-it only re-translates program.c into program.o
-and then runs the link command.
-Because otherwise, nothing has changed.
-Now if I type Make again without making any change, it tells me,
-there's nothing to make.
-The program is up to date.
-There's absolutely no reason.
-So Make automatically checks for dependencies
-and what things have changed.
-It only re-translates or re-links those files
-that actually have to be re-translated.
-So now you know about these very important Make files
-that actually allow the automation of the build process of an executable
-program.
-I strongly recommend that you try this out on your own now
-by creating your own Make file for a project.
-You'll see that this will greatly simplify the build process.
-You return now to play with your own Make file.
+
+
+Makefile的内容，有严格的格式；文件名，也是固定的“Makefile”。（下面的是TAB，不是空格）
+
+```m
+target (what is to be produced): what is needed to do so
+	how to produce
+	
+program: program.o wheatherstats.o
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra weatherstats.o program.o -o program
+	
+program.o: program.c wheatherstats.h
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+	
+wheatherstats.o: wheatherstats.c
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o
+```
+
+
+
+运行这个文件，可以在WebLinux的左边窗口的“build cmd”命令行，输入make命令；“exec”命令行，保留“./program”；再按下“run”按钮。
+
+
+
+### 2.1.2 更改程序内容，重新执行make命令
+
+如果在weatherstats.c中加入Minimum Temperature函数，则要在wheatherstats.h中加入相应的header（就是已经定义的函数的declaration）。program.c想要调用该函数，也得call这个函数。
+
+
+
+这时，在terminal中，输入**make**，即可执行Makefile，不需要辛辛苦苦打3句gcc了。
+
+
+
+### 2.1.3 Makefile很智能
+
+如果只将program.c中的lowest temp改为lowest temperature，不更改weatherstats.c，那么，make命令非常智慧，能够识别出没有真正的改动。
+
+
+
+所以，输入**make**命令，只会输出/执行```gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o```和```gcc -std=c11 -Wall -fmax-errors=10 -Wextra weatherstats.o program.o -o program```
+
+
+
+## 2.4 More elaborate Makefile
+
+更复杂版本的Makefile：
+
+```m
+# define the C compiler to use
+CC = gcc
+# define compiler flags
+CFLAGS = -std=c11 -Wall -fmax-errors=10 -Wextra
+# define library paths in addition to /usr/lib
+LFLAGS = 
+# define libraries to use
+LIBS = 
+# define the object files that this project needs
+OBJFILES = program.o weatherstats.o
+# define the name of thhe executable file
+MAIN = program
+
+# all of thhe below is generic - one typically only adjusts the above
+
+all: $(MAIN)
+
+$(MAIN): $(OBJFILES)
+	$(CC) $(CFLAGS) -o $(MAIN) $(OBJFILES)
+	
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+	
+clean:
+	rm -f $(OBJECTS) $(MAIN)
+```
+
+
+
+1. So in this Makefile we first of all notice that there are comments. Anything that starts with a pound sign, that whole line becomes a comment. And so you can comment your Makefile.
+
+2. In the next line, line two, we define which compiler to use. Because not every system will have the GCC, the new C compiler, installed. And so that's why there's a line here, GCC for my C compiler.
+
+
+
+3. Next I define all my compiler flags.
+
+4. There is the C11 standard for my C. There is the display all warnings, stop at 10 error messages, and display all extra warnings. So these are the flags that we want to use with a C compiler.
+
+
+
+5. Then I left two blank lines here, one for additional library paths in addition to the regular library path. We'll add that later once we talk about libraries, and then also, what libraries to use in this project. **For now, that's nothing.** Because we're not using any additional libraries other than standard ones.
+
+
+
+9. Next we define the object files that this project needs.
+
+10. And it's program.o and weatherstats.o in the case of our weather program.
+
+
+
+11. And finally, name of the executable program file,
+12.  we called it program. But you could call it something else here if you didn't want the output to be called program.
+
+
+
+14. Now anything that follows below this line is completely generic and something you wouldn't change. So if you wanted to use this Makefile for a different project, all you have to do is update things at the top.
+And most likely, you would only update lines 10 and 12, and a little bit later once we do a library, maybe also the two previous ones.
+
+
+
+16. So my first target is called All. And it dependents on dollar Main. What does that mean?This is a way to refer to variables in a Makefile Main is a variable whose content is program. And by dollar Main, I just refer to program. So it says All, the target All, depends on program.
+
+
+
+18. Program itself depends on my object files. The object files for program that o and weatherstats.o. 
+
+19. And to build the program, I run my compile command. So in my case, that's GCC. I add in the compiler flags, the output file name, and then the name of the object files. And we had a very similar line before in our Makefile. Just this one is more generic. And we can more easily make changes.
+
+
+
+21. Next comes a line that tells me how to build a file with the extension .o from the same file with the extension .c.
+
+22. we invoke the compiler with all the flags. We only want to compile because we want to go from .c to .o.
+    And the name of the output file is a funny construct here. The name of the output file is given by what's in front of the colon, so whatever file came in with an extension .o. And the name of the source file is referred to in this funny way, with a dollar less than sign. That refers to the file that's to the right of the colon. So this is some funny notation you need to copy that.
+
+
+
+24. And finally, I added a clean target in case you want to get rid of all the .o files as well as the Main program file for demonstration purposes or just to clean up. Because you only need to **keep your .c, your source files and your header file, in order to be able to rebuild your project at any time**.
+
+25. So again, I'm starting from a clean slate.
+
+
+
+```
+~ $ ls
+Makefile program.c weatherstats.c weatherstats.h
+
+~ $ make
+gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.o weatherstats.o -o program
+gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o
+
+~ $ ./program
+Average 7-day temp: 7.91
+Highhest temp: 15.30
+Lowest temperature: 0.30
+
+~ $ ls
+Makefile program.c weatherstats.c weatherstats.o pragram pragram.o weatherstats.h
+
+~ $ make clean
+rm -f pragram.o weatherstats.o program
+
+~ $ ls
+Makefile program.c weatherstats.c weatherstats.h
+```
+
+
+
+## 2.5 Run a program with Makefile
+
+```m
+program: program.o wheatherstats.o
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra weatherstats.o program.o -o program
+	
+program.o: program.c wheatherstats.h
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+	
+wheatherstats.o: wheatherstats.c
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o
+	
+launch: program
+	./program
+```
+
+
+
+在terminal中输入make launch：
+
+```
+~ $ make launch
+./program
+Average 7-day temp: 7.91
+Highhest temp: 15.30
+Lowest temperature: 0.30
+```
+
+
+
+如果修改program.c中的一个数值，那么会有重新编译program.c，重新生成program：
+
+（weatherstats.c无需重新编译，因为其内容没有修改。）
+
+```
+~ $ make launch
+gcc -std=c11 -Wall -fmax-errors=10 -Wextra weatherstats.o program.o -o program
+gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o
+./program
+Average 7-day temp: 6.49
+Highhest temp: 12.30
+Lowest temperature: 0.30
+```
+
+
+
+# 3 Creating a static Library
+
+## 3.1 Create your library
+
+### 3.1.1 Static library creation
+
+1. compile files containing functions to object files (.o).
+2. bundle these object files into an archice (.a)
+3. link the library to your code containing the main function
+
+
+
+### 3.1.2 ar命令的使用
+
+#### 3.1.2.1 准备好.o文件
+
+已知，program.c可生成可执行程序；而这个weatherstats.c只包含函数，不能生成可执行程序。
+
+```
+~ $ gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o
+```
+
+
+
+#### 3.1.2.2 ar命令
+
+```
+~ $ ar rcs libweather.a weatherstats.o
+```
+
+
+
+#### 3.2.2.3 ar命令详解
+
+1. **ar**命令，有3个参数：r、c、s
+
+R stands for replace, in case a certain .o file is already part of your library. You could replace it if you wanted to.
+
+C stands for creative, doesn't exist yet. 
+
+S means create an index for faster access.
+
+We will always choose these parameters, they're very standard.
+
+
+
+2. library的命名
+
+以lib开头，本例为libweather，后缀为.a（as in a for this archive command）
+
+
+
+3. 设置.o文件
+
+即，weatherstats.o
+
+
+
+#### 3.2.2.4 生成.a文件
+
+```
+~ $ ls *.a
+libweather.a
+```
+
+
+
+### 3.1.3 library的使用
+
+#### 3.1.3.1 用法1：libweather.a
+
+目前已有program.o了，无需再编译了
+
+```
+~ $ gcc -o grogram program.o libweather.a
+```
+
+
+
+于是，成功生成可执行程序program。
+
+
+
+#### 3.1.3.2 用法2：-lweather
+
+```
+~ $ rm program
+~ $ gcc -o grogram program.o -L. -lweather
+```
+
+
+
+-lweather中，l代表lib，weather是library的名字。
+
+此外，因为这个library是自己的library，并不包含在标准库的路径中。所以加入大写的L，”.“代表当前路径，L和“.”之间没有空格。
+
+
+
+这样同样生成了可执行程序program。
+
+
+
+### 3.1.4 dynamic or shared library
+
+前文的是static library，是一系列object files的集合。
+
+
+
+但还有另一种library，即dynamic or shared library。
+
+
+
+**Static Versus Dynamic Library in C **
+
+|Static |Dynamic |
+| ---- | ---- |
+| Linker fields all used library functions (such as printf(), sqrt(), etc) and copies them into your executable file. | Linked dynamically at run-time by the OS: every program that accessed the library uses the same copy. |
+| Libraries have the extension .a (Linux) or .lib (Windows). | Libraries have the extension .so (Linux) or .dll (Windows). |
+| Executable is a larger file, needing more disk space and main memory. | Executable only contains the name of (a link to) the library. |
+| If library changes, the executable does not automatically update - needs to be re-linked. | If library changes, the executable will automatically use thhe new library code. |
+| Library access is faster. | Dynamic querying of symbols takes time. |
+
+
+
+**Static Versus Dynamic Library in C (Linux OS)**
+
+| Library | Static | Dynamic |
+| ---- | ---- | ---- |
+| Compile library files | gcc -c part1.c -o part1.o <br> gcc -c part2.c -o part2.o <br> ... | gcc -c **-fpic** part1.c -o part1.o <br> gcc -c **-fpic** part2.c -o part2.o <br> ... |
+| Create library | **ar rcs** libmylib.**a** part1.o part2.o ... | gcc **-shared** -o libmylib.**so** part1.o part2.o ... |
+| Compile main program | gcc -c program.c -o program.o | gcc -c program.c -o program.o |
+| Link library to main program | gcc -o program program.o -L. -lmylib | gcc -o program program.o -L. -lmylib <br>Add library path to environment varible: <br>**export LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH** |
+| Run program | ./program | ./program |
+
+
+
+1. -fpic
+
+
+And the same is true for the dynamic library, but we need to add an extra compiler flag.
+
+That compiler flag is called pic, as in **position independent code**. So the extra compiler flag is **-fpic**, because we need to create a special object file with position independent code for the dynamic linking to work properly later.
+
+
+
+2. export LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH
+
+目前的LD_LIBRARY_PATH，赋值为当前目录$PWD，加上原来的library目录。
+
+
+
+## 3.2 Activity: create your library
+
+![image-20200426001021244](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200426001021244.png)
+
+
+
+## 3.4 Modify your library
+
+```
+~ $ ls
+Makefile program.c weatherstats.c weatherstats.h
+~ $ gcc -c weatherstats.c -o weatherstats.o
+~ $ ar rcs libweather.a weatherstats.o
+~ $ touch weatherio.c
+~ $ touch weatherio.h
+~ $ gcc -c weatherio.c -o weatherio.o
+~ $ ls
+Makefile program.c weatherstats.c weatherstats.h weatherstats.o libweather.a weatherio.c weatherio.o weatherio.h
+~ $ ar rcs libweather.a weatherstats.o weatherio.o
+~ $ touch weather.h
+~ $ gcc program.c -L. -lweather -o program
+~ $ ./program
+```
+
+
+
+3. 生成weatherstats.c的object文件weatherstats.o。（无法生成可执行程序，因为weatherstats.c中不含main函数。）
+
+
+
+3. 生成library：libweather.a
+
+
+5. 生成新文件weatherio.c：I've written here a simple function to print out the temperatures that are stored in the temperatures array. So my function is named Print Temperatures. It doesn't return anything. So it has a void return type. I pass to it a pointer to the temperatures array as well as the number of temperatures stored in this array. I print out over the past so-and-so many days the temperatures were. So-and-so many is, of course, the number of temperatures that was passed into this function. And then I have a simple loop that runs from i equals 0 to number of temperatures minus 1, and prints out what the temperature was on day i. Now I want this to look nice. So I want to say, on day one the temperature was, on day two the temperature was. But my i starts counting at 0. And so this person D here that indicates the day, I'm going to print out i plus 1 instead of i. And then the temperature itself, which I print out as a double with two decimal places, I use temps of i. So it's a very simple function. I'm going to save that.
+6. 生成新文件weatherio.h，包含a prototype for the Print Temps function.
+7. 生成weatherio.c的object文件weatherio.o。
+
+
+
+
+10. 原library文件libweather.a进行拓展，既包含原来的weatherstats.o，又包含新的weatherio.o
+11. 新建weather.h，写入内容如下，这样weather.h就将weatherstats.h和weatherio.h打包了：
+
+```c
+#include "weatherstats.h"
+#include "weatherio.h"
+```
+
+program.c中，原来的```#include "weatherstats.h"```，此处则改为```#include "weather.h"```
+
+
+
+12. 理论上，接下来就可以用program.c生成program.o；再用gcc把program.o和library连接起来，生成可执行程序program。但有更快的步骤，gcc之后不加-c，直接用program.c到可执行程序：
+
+```
+gcc program.c -L. -lweather -o program
+```
+
+
+
+13. program程序没有问题
+
+
+
+## 3.5 Activity: Modify your library
+
+library变化了。
+
+如果原程序不修改，不会出问题，只是会按原来的操作继续做而已。
+
+![image-20200426005529882](/Users/chenjiajia/Library/Application Support/typora-user-images/image-20200426005529882.png)
+
+
+
+## 3.7 Ultimate makefile
+
+### 3.7.1 回顾Makefile
+
+这是本节2.5的内容：
+
+```m
+program: program.o wheatherstats.o
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra weatherstats.o program.o -o program
+	
+program.o: program.c wheatherstats.h
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+	
+wheatherstats.o: wheatherstats.c
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o
+	
+launch: program
+	./program
+```
+
+
+
+### 3.7.2 更新的结果
+
+```m
+program: program.o
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.o -L. -lweathher -o program
+	
+program.o: program.c
+	gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+	
+launch: program
+	./program
+```
+
+
+
+在terminal中，输入：
+
+```
+make launch
+```
+
+即可运行程序program。
+
+
+
+### 3.7.3 复杂版本的Makefile
+
+
+
+```m
+# define the C compiler to use
+CC = gcc
+# define compiler flags
+CFLAGS = -std=c11 -Wall -fmax-errors=10 -Wextra
+# define library paths in addition to /usr/lib
+LFLAGS = -L.
+# define libraries to use
+LIBS = -lweather
+# define the object files that this project needs
+OBJFILES = program.o 
+# define the name of thhe executable file
+MAIN = program
+
+# all of thhe below is generic - one typically only adjusts the above
+
+all: $(MAIN)
+
+$(MAIN): $(OBJFILES)
+	$(CC) $(CFLAGS) -o $(MAIN) $(OBJFILES) $(LFLAGS) $(LIBS)
+	
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+	
+launch: program
+	./program
+	
+clean:
+	rm -f $(OBJECTS) $(MAIN)
+```
+
+
+
+同样，在terminal中，输入：
+
+```
+make launch
+```
+
+即可运行程序program。
